@@ -36,16 +36,12 @@ sudo apt-get update
 
 sudo apt-get install -y libteonet-dev
 
-#### Run
-
-teovpn -?
-
 
 ### CENTOS / RHEL / FEDORA
 
 http://repo.ksproject.org/rhel/x86_64/
 
-# Add repository
+#### Add repository
 
     vi /etc/yum.repos.d/teonet.repo
 
