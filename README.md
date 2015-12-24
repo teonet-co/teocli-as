@@ -1,10 +1,10 @@
 # Teonet application template
 
-## Fork project
+## 1. Fork project
 
 Fork and rename this project to create your own Teonet Application.
 
-## Change application name
+## 2. Change application name
 
 Rename the ```teomet-tmpl``` to ```your-application-name``` 
 and ```teomet_tmpl``` to ```your_application_name``` in files:
@@ -13,11 +13,11 @@ and ```teomet_tmpl``` to ```your_application_name``` in files:
     MakeFile.am
     src/MakeFile.am
 
-## Generate your application sources (first time when got sources from repository)
+## 3. Generate your application sources (first time when got sources from repository)
 
     ./autogen.sh
 
-## Install Teonet library from repositories
+## 4. Install Teonet library from repositories
 
 DEB / RPM repository: http://repo.ksproject.org
 
@@ -60,7 +60,18 @@ http://repo.ksproject.org/rhel/x86_64/
     yum install libteonet
     ldconfig 
 
+### SUSE
 
-## Make your application 
+#### Add repository
+
+    zypper ar -f http://repo.ksproject.org/opensuse/x86_64/ teonet
+
+#### Install
+    
+    zypper in -y libteonet
+    ldconfig
+
+
+## 5. Make your application 
 
     make
