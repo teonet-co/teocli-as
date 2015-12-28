@@ -5,7 +5,6 @@
       <df name="src">
         <in>main.c</in>
       </df>
-      <in>README.md</in>
     </df>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -28,6 +27,9 @@
         <dependencyChecking>false</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0" commonFlags="-g -g -O2"/>
+      </flagsDictionary>
       <codeAssistance>
       </codeAssistance>
       <makefileType>
@@ -36,11 +38,26 @@
           <buildCommand>${MAKE} -f Makefile</buildCommand>
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
           <executablePath></executablePath>
+          <cTool>
+            <incDir>
+              <pElem>src</pElem>
+              <pElem>.</pElem>
+              <pElem>../teonet/src</pElem>
+              <pElem>../teonet/embedded/libpbl/src</pElem>
+              <pElem>../teonet/embedded/teocli/libteol0</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>HAVE_CONFIG_H</Elem>
+              <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
+              <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
+              <Elem>PACKAGE_SRC_DIR="."</Elem>
+            </preprocessorList>
+          </cTool>
         </makeTool>
       </makefileType>
-      <item path="README.md" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/main.c" ex="false" tool="0" flavor2="2">
+        <cTool flags="0">
+        </cTool>
       </item>
     </conf>
   </confs>

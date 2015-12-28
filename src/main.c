@@ -25,7 +25,7 @@
 
 #include "ev_mgr.h"
 
-#define TVPN_VERSION VERSION
+#define TTMP_VERSION "0.0.0"
 
 #ifdef TEO_THREAD
 volatile int teonet_run = 1;
@@ -62,7 +62,7 @@ void event_cb(ksnetEvMgrClass *ke, ksnetEvMgrEvents event, void *data,
  */
 int main(int argc, char** argv) {
 
-    printf("Teovpn ver " TVPN_VERSION "\n");
+    printf("Teovpn ver " TTMP_VERSION "\n");
 
     // Initialize teonet event manager and Read configuration
     ksnetEvMgrClass *ke = ksnetEvMgrInit(argc, argv, event_cb /*NULL*/, READ_ALL);

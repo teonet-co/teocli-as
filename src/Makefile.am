@@ -11,7 +11,9 @@ AM_CPPFLAGS = \
 AM_CFLAGS = \
 	 -Wall \
 	 -g \
-	 -I$(HOME)/Projects/teonet/src/
+	 -I$(HOME)/Projects/teonet/src/ \
+	 -I$(HOME)/Projects/teonet/embedded/libpbl/src \
+	 -I$(HOME)/Projects/teonet/embedded/teocli/libteol0
 
 AM_LDFLAGS = \
  	 -L$(HOME)/Projects/teonet/src/
@@ -24,7 +26,7 @@ AM_CXXFLAGS = \
 #-std=c++11
 
 #LIBS = $YODGE_NODE_LIBS
-LIBS =	-lteonet
+LIBS =	-lteonet -lcrypto
 teonet_tmpl_LDADD = $(HOME)/Projects/teonet/src/libteonet.la
 
 bin_PROGRAMS = teonet_tmpl

@@ -75,3 +75,9 @@ http://repo.ksproject.org/rhel/x86_64/
 ## 5. Make your application 
 
     make
+
+## 6. Run 
+    
+    src/teonet_tmpl 
+  
+    src/teonet_tmpl teo-tmpl

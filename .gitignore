@@ -27,3 +27,5 @@
 /src/Makefile
 /src/Makefile.in
 /nbproject/private/
+/src/.libs/
+/src/teonet_tmpl
