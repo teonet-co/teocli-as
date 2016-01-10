@@ -27,13 +27,13 @@ AM_CXXFLAGS = \
 
 #LIBS = $YODGE_NODE_LIBS
 LIBS =	-lteonet -lcrypto
-teonet_tmpl_LDADD = $(HOME)/Projects/teonet/src/libteonet.la
+teocli_as_LDADD = $(HOME)/Projects/teonet/src/libteonet.la
 
-bin_PROGRAMS = teonet_tmpl
+bin_PROGRAMS = teocli_as
 
-teonet_tmpl_SOURCES = \
+teocli_as_SOURCES = \
 	main.c
 
-teonet_tmpl_LDFLAGS =
+teocli_as_LDFLAGS =
 
-teonet_tmpl_LDADD += $(TEONET_TMPL_LIBS)
+teocli_as_LDADD += $(TEOCLI_AS_LIBS)

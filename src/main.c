@@ -1,16 +1,17 @@
 /* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*- */
 /*
- * lr-tmp application
+ * teocli-as application
  *
- * main.cpp
- * Copyright (C) Kirill Scherba 2011-2014 <kirill@scherba.ru>
+ * main.c
+ * 
+ * Copyright (C) Kirill Scherba 2016 <kirill@scherba.ru>
  *
- * yodge-node is free software: you can redistribute it and/or modify it
+ * teocli-as is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
  * Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * yodge-node is distributed in the hope that it will be useful, but
+ * teocli-as is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
@@ -25,7 +26,7 @@
 
 #include "ev_mgr.h"
 
-#define TTMP_VERSION "0.0.0"
+#define TAS_VERSION "0.0.1"
 
 #ifdef TEO_THREAD
 volatile int teonet_run = 1;
@@ -62,12 +63,13 @@ void event_cb(ksnetEvMgrClass *ke, ksnetEvMgrEvents event, void *data,
  */
 int main(int argc, char** argv) {
 
-    printf("Teovpn ver " TTMP_VERSION "\n");
+    printf("Teocli AngelScript ver " TAS_VERSION "\n");
 
     // Initialize teonet event manager and Read configuration
     ksnetEvMgrClass *ke = ksnetEvMgrInit(argc, argv, event_cb /*NULL*/, READ_ALL);
 
-    // To run teonet as thread change AM_CONDITIONAL(TEO_THREAD, false) in configure.ac to true
+    // To run teonet as thread change AM_CONDITIONAL(TEO_THREAD, false) in 
+    // configure.ac to true
     #ifdef TEO_THREAD
     ksnetEvMgrRunThread(ke);
     for(; teonet_run;) {

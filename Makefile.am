@@ -3,7 +3,7 @@
 
 SUBDIRS = src po
 
-yodge_pingdocdir = ${prefix}/doc/teonet-tmpl
+yodge_pingdocdir = ${prefix}/doc/teocli-as
 yodge_pingdoc_DATA = \
 	README\
 	COPYING\
@@ -17,7 +17,7 @@ INTLTOOL_FILES = intltool-extract.in \
 	intltool-merge.in \
 	intltool-update.in
 
-EXTRA_DIST = $(teonet-tmpldoc_DATA) \
+EXTRA_DIST = $(teocli-asdoc_DATA) \
 	$(INTLTOOL_FILES)
 
 DISTCLEANFILES = intltool-extract \
@@ -28,4 +28,4 @@ DISTCLEANFILES = intltool-extract \
 
 # Remove doc directory on uninstall
 uninstall-local:
-	-rm -r $(teonet-tmpldocdir)
+	-rm -r $(teocli-asdocdir)
