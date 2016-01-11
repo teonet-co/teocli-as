@@ -16,24 +16,28 @@ AM_CFLAGS = \
 	 -I$(HOME)/Projects/teonet/embedded/teocli/libteol0
 
 AM_LDFLAGS = \
- 	 -L$(HOME)/Projects/teonet/src/
+ 	 -L$(HOME)/Projects/teonet/src/ \
+	 -L../../angelscript/sdk/angelscript/lib \
+	 -L$(HOME)/Projects/angelscript/sdk/angelscript/lib
 
 AM_CXX = clang++
 AM_CXXFLAGS = \
          -g -Wall -pedantic \
 	 -I/opt/localionclude \
-	 -I$(HOME)/Projects/teonet/src/
-#-std=c++11
+	 -I$(HOME)/Projects/teonet/src/ \
+	 -I../../angelscript/sdk/angelscript/include \
+	 -std=c++11
 
 #LIBS = $YODGE_NODE_LIBS
-LIBS =	-lteonet -lcrypto
-teocli_as_LDADD = $(HOME)/Projects/teonet/src/libteonet.la
+LIBS =	-langelscript
+# -lteonet -lcrypto
+#teocli_as_LDADD = $(HOME)/Projects/teonet/src/libteonet.la
 
 bin_PROGRAMS = teocli_as
 
 teocli_as_SOURCES = \
-	main.c
+	main.cpp
 
-teocli_as_LDFLAGS =
+teocli_as_LDFLAGS = $(AM_LDFLAGS)
 
-teocli_as_LDADD += $(TEOCLI_AS_LIBS)
+teocli_as_LDADD = $(TEOCLI_AS_LIBS)

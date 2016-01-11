@@ -1,9 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="../angelscript" name="1">
+      <df name="sdk">
+        <df name="add_on">
+          <df name="autowrapper">
+            <df name="generator">
+              <in>generateheader.cpp</in>
+            </df>
+          </df>
+          <df name="contextmgr">
+            <in>contextmgr.cpp</in>
+          </df>
+          <df name="debugger">
+            <in>debugger.cpp</in>
+          </df>
+          <df name="scriptany">
+            <in>scriptany.cpp</in>
+          </df>
+          <df name="scriptarray">
+            <in>scriptarray.cpp</in>
+          </df>
+          <df name="scriptbuilder">
+            <in>scriptbuilder.cpp</in>
+          </df>
+          <df name="scriptdictionary">
+            <in>scriptdictionary.cpp</in>
+          </df>
+          <df name="scriptfile">
+            <in>scriptfile.cpp</in>
+            <in>scriptfilesystem.cpp</in>
+          </df>
+          <df name="scriptgrid">
+            <in>scriptgrid.cpp</in>
+          </df>
+          <df name="scripthandle">
+            <in>scripthandle.cpp</in>
+          </df>
+          <df name="scripthelper">
+            <in>scripthelper.cpp</in>
+          </df>
+          <df name="scriptmath">
+            <in>scriptmath.cpp</in>
+            <in>scriptmathcomplex.cpp</in>
+          </df>
+          <df name="scriptstdstring">
+            <in>scriptstdstring.cpp</in>
+            <in>scriptstdstring_utils.cpp</in>
+          </df>
+          <df name="serializer">
+            <in>serializer.cpp</in>
+          </df>
+          <df name="weakref">
+            <in>weakref.cpp</in>
+          </df>
+        </df>
+        <df name="angelscript">
+          <df name="source">
+            <in>as_atomic.cpp</in>
+            <in>as_builder.cpp</in>
+            <in>as_bytecode.cpp</in>
+            <in>as_callfunc.cpp</in>
+            <in>as_callfunc_arm.cpp</in>
+            <in>as_callfunc_mips.cpp</in>
+            <in>as_callfunc_ppc.cpp</in>
+            <in>as_callfunc_ppc_64.cpp</in>
+            <in>as_callfunc_sh4.cpp</in>
+            <in>as_callfunc_x64_gcc.cpp</in>
+            <in>as_callfunc_x64_mingw.cpp</in>
+            <in>as_callfunc_x64_msvc.cpp</in>
+            <in>as_callfunc_x86.cpp</in>
+            <in>as_callfunc_xenon.cpp</in>
+            <in>as_compiler.cpp</in>
+            <in>as_configgroup.cpp</in>
+            <in>as_context.cpp</in>
+            <in>as_datatype.cpp</in>
+            <in>as_gc.cpp</in>
+            <in>as_generic.cpp</in>
+            <in>as_globalproperty.cpp</in>
+            <in>as_memory.cpp</in>
+            <in>as_module.cpp</in>
+            <in>as_objecttype.cpp</in>
+            <in>as_outputbuffer.cpp</in>
+            <in>as_parser.cpp</in>
+            <in>as_restore.cpp</in>
+            <in>as_scriptcode.cpp</in>
+            <in>as_scriptengine.cpp</in>
+            <in>as_scriptfunction.cpp</in>
+            <in>as_scriptnode.cpp</in>
+            <in>as_scriptobject.cpp</in>
+            <in>as_string.cpp</in>
+            <in>as_string_util.cpp</in>
+            <in>as_thread.cpp</in>
+            <in>as_tokenizer.cpp</in>
+            <in>as_typeinfo.cpp</in>
+            <in>as_variablescope.cpp</in>
+          </df>
+        </df>
+        <df name="samples">
+          <df name="asbuild">
+            <df name="source">
+              <in>main.cpp</in>
+            </df>
+          </df>
+          <df name="asrun">
+            <df name="source">
+              <in>main.cpp</in>
+            </df>
+          </df>
+          <df name="concurrent">
+            <df name="source">
+              <in>main.cpp</in>
+            </df>
+          </df>
+          <df name="console">
+            <df name="source">
+              <in>main.cpp</in>
+            </df>
+          </df>
+          <df name="coroutine">
+            <df name="source">
+              <in>main.cpp</in>
+            </df>
+          </df>
+          <df name="events">
+            <df name="source">
+              <in>main.cpp</in>
+            </df>
+          </df>
+          <df name="game">
+            <df name="source">
+              <in>gamemgr.cpp</in>
+              <in>gameobj.cpp</in>
+              <in>main.cpp</in>
+              <in>scriptmgr.cpp</in>
+            </df>
+          </df>
+          <df name="include">
+            <df name="source">
+              <in>main.cpp</in>
+            </df>
+          </df>
+          <df name="tutorial">
+            <df name="source">
+              <in>main.cpp</in>
+            </df>
+          </df>
+        </df>
+      </df>
+    </df>
     <df root="." name="0">
       <df name="src">
         <in>main.c</in>
+        <in>main.cpp</in>
       </df>
     </df>
     <logicalFolder name="ExternalFiles"
@@ -18,6 +167,7 @@
   <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
   <sourceRootList>
     <Elem>.</Elem>
+    <Elem>../angelscript</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -28,7 +178,8 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <flagsDictionary>
-        <element flagsID="0" commonFlags="-g -g -O2"/>
+        <element flagsID="0" commonFlags="-O2"/>
+        <element flagsID="1" commonFlags="-g -g -O2"/>
       </flagsDictionary>
       <codeAssistance>
       </codeAssistance>
@@ -53,11 +204,376 @@
               <Elem>PACKAGE_SRC_DIR="."</Elem>
             </preprocessorList>
           </cTool>
+          <ccTool>
+            <incDir>
+              <pElem>src</pElem>
+              <pElem>.</pElem>
+              <pElem>/opt/localionclude</pElem>
+              <pElem>../teonet/src</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>HAVE_CONFIG_H</Elem>
+              <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
+              <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
+              <Elem>PACKAGE_SRC_DIR="."</Elem>
+            </preprocessorList>
+          </ccTool>
         </makeTool>
       </makefileType>
+      <item path="../angelscript/sdk/add_on/autowrapper/generator/generateheader.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/add_on/contextmgr/contextmgr.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/add_on/debugger/debugger.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/add_on/scriptany/scriptany.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/add_on/scriptarray/scriptarray.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/add_on/scriptbuilder/scriptbuilder.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/add_on/scriptdictionary/scriptdictionary.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/add_on/scriptfile/scriptfile.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/add_on/scriptfile/scriptfilesystem.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/add_on/scriptgrid/scriptgrid.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/add_on/scripthandle/scripthandle.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/add_on/scripthelper/scripthelper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/add_on/scriptmath/scriptmath.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/add_on/scriptmath/scriptmathcomplex.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/add_on/scriptstdstring/scriptstdstring.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/add_on/scriptstdstring/scriptstdstring_utils.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/add_on/serializer/serializer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/add_on/weakref/weakref.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_atomic.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_builder.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_bytecode.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_callfunc.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_callfunc_arm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_callfunc_mips.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_callfunc_ppc.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_callfunc_ppc_64.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_callfunc_sh4.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_callfunc_x64_gcc.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_callfunc_x64_mingw.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_callfunc_x64_msvc.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_callfunc_x86.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_callfunc_xenon.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_compiler.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_configgroup.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_context.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_datatype.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_gc.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_generic.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_globalproperty.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_memory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_module.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_objecttype.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_outputbuffer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_parser.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_restore.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_scriptcode.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_scriptengine.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_scriptfunction.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_scriptnode.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_scriptobject.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_string.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_string_util.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_thread.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_tokenizer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_typeinfo.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/angelscript/source/as_variablescope.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/samples/asbuild/source/main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/samples/asrun/source/main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/samples/concurrent/source/main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/samples/console/source/main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/samples/coroutine/source/main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/samples/events/source/main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/samples/game/source/gamemgr.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/samples/game/source/gameobj.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/samples/game/source/main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/samples/game/source/scriptmgr.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/samples/include/source/main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="../angelscript/sdk/samples/tutorial/source/main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <folder path="0">
+        <ccTool>
+          <incDir>
+            <pElem>../angelscript/sdk/angelscript/include</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
       <item path="src/main.c" ex="false" tool="0" flavor2="2">
-        <cTool flags="0">
+        <cTool flags="1">
         </cTool>
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool flags="0">
+        </ccTool>
       </item>
     </conf>
   </confs>
