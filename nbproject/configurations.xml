@@ -151,6 +151,9 @@
     </df>
     <df root="." name="0">
       <df name="src">
+        <df name="modules">
+          <in>as_connect.cpp</in>
+        </df>
         <in>main.c</in>
         <in>main.cpp</in>
       </df>
@@ -180,6 +183,7 @@
       <flagsDictionary>
         <element flagsID="0" commonFlags="-O2"/>
         <element flagsID="1" commonFlags="-g -g -O2"/>
+        <element flagsID="2" commonFlags="-std=c++11 -O2"/>
       </flagsDictionary>
       <codeAssistance>
       </codeAssistance>
@@ -248,7 +252,9 @@
       <item path="../angelscript/sdk/add_on/scriptbuilder/scriptbuilder.cpp"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="8">
+        <ccTool flags="2">
+        </ccTool>
       </item>
       <item path="../angelscript/sdk/add_on/scriptdictionary/scriptdictionary.cpp"
             ex="false"
@@ -293,7 +299,12 @@
       <item path="../angelscript/sdk/add_on/scriptstdstring/scriptstdstring.cpp"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="8">
+        <ccTool flags="2">
+          <incDir>
+            <pElem>../angelscript/sdk/angelscript/include</pElem>
+          </incDir>
+        </ccTool>
       </item>
       <item path="../angelscript/sdk/add_on/scriptstdstring/scriptstdstring_utils.cpp"
             ex="false"
@@ -567,13 +578,22 @@
           </incDir>
         </ccTool>
       </folder>
+      <folder path="1/sdk/add_on/scriptbuilder">
+        <ccTool>
+          <incDir>
+            <pElem>../angelscript/sdk/angelscript/include</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
       <item path="src/main.c" ex="false" tool="0" flavor2="2">
         <cTool flags="1">
         </cTool>
       </item>
-      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="4">
         <ccTool flags="0">
         </ccTool>
+      </item>
+      <item path="src/modules/as_connect.cpp" ex="false" tool="1" flavor2="4">
       </item>
     </conf>
   </confs>

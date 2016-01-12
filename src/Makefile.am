@@ -29,14 +29,18 @@ AM_CXXFLAGS = \
 	 -std=c++11
 
 #LIBS = $YODGE_NODE_LIBS
-LIBS =	-langelscript
+LIBS =	-langelscript -pthread
 # -lteonet -lcrypto
 #teocli_as_LDADD = $(HOME)/Projects/teonet/src/libteonet.la
 
 bin_PROGRAMS = teocli_as
 
 teocli_as_SOURCES = \
-	main.cpp
+	main.cpp \
+	modules/as_connect.cpp \
+	\
+	../../angelscript/sdk/add_on/scriptstdstring/scriptstdstring.cpp \
+	../../angelscript/sdk/add_on/scriptbuilder/scriptbuilder.cpp
 
 teocli_as_LDFLAGS = $(AM_LDFLAGS)
 
