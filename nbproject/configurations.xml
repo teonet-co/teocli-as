@@ -162,39 +162,6 @@
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="teonet" displayName="teonet" projectFiles="true">
-        <logicalFolder name="embedded" displayName="embedded" projectFiles="true">
-          <logicalFolder name="libpbl" displayName="libpbl" projectFiles="true">
-            <logicalFolder name="src" displayName="src" projectFiles="true">
-              <itemPath>../teonet/embedded/libpbl/src/pbl.h</itemPath>
-            </logicalFolder>
-          </logicalFolder>
-        </logicalFolder>
-        <logicalFolder name="src" displayName="src" projectFiles="true">
-          <logicalFolder name="config" displayName="config" projectFiles="true">
-            <itemPath>../teonet/src/config/conf.h</itemPath>
-            <itemPath>../teonet/src/config/opt.h</itemPath>
-          </logicalFolder>
-          <logicalFolder name="modules" displayName="modules" projectFiles="true">
-            <itemPath>../teonet/src/modules/cque.h</itemPath>
-            <itemPath>../teonet/src/modules/l0-server.h</itemPath>
-            <itemPath>../teonet/src/modules/net_tcp.h</itemPath>
-            <itemPath>../teonet/src/modules/net_term.h</itemPath>
-            <itemPath>../teonet/src/modules/net_tun.h</itemPath>
-            <itemPath>../teonet/src/modules/stream.h</itemPath>
-            <itemPath>../teonet/src/modules/tcp_proxy.h</itemPath>
-            <itemPath>../teonet/src/modules/teodb.h</itemPath>
-            <itemPath>../teonet/src/modules/vpn.h</itemPath>
-          </logicalFolder>
-          <itemPath>../teonet/src/crypt.h</itemPath>
-          <itemPath>../teonet/src/ev_mgr.h</itemPath>
-          <itemPath>../teonet/src/hotkeys.h</itemPath>
-          <itemPath>../teonet/src/net_arp.h</itemPath>
-          <itemPath>../teonet/src/net_com.h</itemPath>
-          <itemPath>../teonet/src/net_core.h</itemPath>
-          <itemPath>../teonet/src/tr-udp.h</itemPath>
-        </logicalFolder>
-      </logicalFolder>
     </logicalFolder>
     <df root="." name="1">
       <df name="src">

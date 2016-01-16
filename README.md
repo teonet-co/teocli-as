@@ -5,6 +5,12 @@
 
 ## 2. Installation
 
+## Clone git repository  to get code
+
+git clone git@gitlab.ksproject.org:teonet/TeocliAS.git
+cd TeocliAS
+git submodule update --init
+
 
 ## 2.1 Install Teonet library from repositories
 
