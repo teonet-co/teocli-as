@@ -149,26 +149,17 @@
         </df>
       </df>
     </df>
-    <logicalFolder name="Projects"
-                   displayName="Projects"
+    <logicalFolder name="include"
+                   displayName="include"
                    projectFiles="true"
-                   root="..">
-      <logicalFolder name="angelscript" displayName="angelscript" projectFiles="true">
-        <logicalFolder name="sdk" displayName="sdk" projectFiles="true">
-          <logicalFolder name="angelscript" displayName="angelscript" projectFiles="true">
-            <logicalFolder name="include" displayName="include" projectFiles="true">
-              <itemPath>../angelscript/sdk/angelscript/include/angelscript.h</itemPath>
-            </logicalFolder>
-          </logicalFolder>
-        </logicalFolder>
-      </logicalFolder>
+                   root="../angelscript/sdk/angelscript/include">
+      <itemPath>../angelscript/sdk/angelscript/include/angelscript.h</itemPath>
     </logicalFolder>
     <df root="." name="1">
       <df name="src">
         <df name="modules">
           <in>as_connect.cpp</in>
         </df>
-        <in>main.c</in>
         <in>main.cpp</in>
       </df>
     </df>
@@ -195,10 +186,7 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <flagsDictionary>
-        <element flagsID="0"
-                 commonFlags="-mtune=generic -march=x86-64 -O2 -std=c++11 -fstack-protector"/>
-        <element flagsID="1"
-                 commonFlags="-mtune=generic -march=x86-64 -g -g -O2 -fstack-protector"/>
+        <element flagsID="0" commonFlags="-O2"/>
       </flagsDictionary>
       <codeAssistance>
       </codeAssistance>
@@ -208,15 +196,17 @@
           <buildCommand>${MAKE} -f Makefile</buildCommand>
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
           <executablePath></executablePath>
-          <cTool>
+          <ccTool>
             <incDir>
-              <pElem>../teonet/src/config</pElem>
-              <pElem>../teonet/embedded/libpbl/src</pElem>
-              <pElem>../teonet/src</pElem>
-              <pElem>../teonet/src/modules</pElem>
               <pElem>src</pElem>
             </incDir>
-          </cTool>
+            <preprocessorList>
+              <Elem>HAVE_CONFIG_H</Elem>
+              <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
+              <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
+              <Elem>PACKAGE_SRC_DIR="."</Elem>
+            </preprocessorList>
+          </ccTool>
         </makeTool>
         <preBuild>
           <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
@@ -301,9 +291,10 @@
             flavor2="8">
         <ccTool flags="0">
           <incDir>
-            <pElem>../angelscript/sdk/add_on/scriptstdstring</pElem>
+            <pElem>/opt/localionclude</pElem>
+            <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
-            <pElem>src</pElem>
+            <pElem>src/embedded/teocli/libteol0</pElem>
           </incDir>
         </ccTool>
       </item>
@@ -313,18 +304,11 @@
             flavor2="4">
         <ccTool>
           <incDir>
-            <pElem>src</pElem>
             <pElem>.</pElem>
             <pElem>/opt/localionclude</pElem>
             <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
-            <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
-            <Elem>PACKAGE_SRC_DIR="."</Elem>
-          </preprocessorList>
         </ccTool>
       </item>
       <item path="../angelscript/sdk/add_on/serializer/serializer.cpp"
@@ -590,289 +574,175 @@
       <folder path="0/sdk/add_on/autowrapper">
         <ccTool>
           <incDir>
-            <pElem>src</pElem>
             <pElem>.</pElem>
             <pElem>/opt/localionclude</pElem>
             <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
-            <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
-            <Elem>PACKAGE_SRC_DIR="."</Elem>
-          </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/sdk/add_on/contextmgr">
         <ccTool>
           <incDir>
-            <pElem>src</pElem>
             <pElem>.</pElem>
             <pElem>/opt/localionclude</pElem>
             <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
-            <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
-            <Elem>PACKAGE_SRC_DIR="."</Elem>
-          </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/sdk/add_on/debugger">
         <ccTool>
           <incDir>
-            <pElem>src</pElem>
             <pElem>.</pElem>
             <pElem>/opt/localionclude</pElem>
             <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
-            <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
-            <Elem>PACKAGE_SRC_DIR="."</Elem>
-          </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/sdk/add_on/scriptany">
         <ccTool>
           <incDir>
-            <pElem>src</pElem>
             <pElem>.</pElem>
             <pElem>/opt/localionclude</pElem>
             <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
-            <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
-            <Elem>PACKAGE_SRC_DIR="."</Elem>
-          </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/sdk/add_on/scriptarray">
         <ccTool>
           <incDir>
-            <pElem>src</pElem>
             <pElem>.</pElem>
             <pElem>/opt/localionclude</pElem>
             <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
-            <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
-            <Elem>PACKAGE_SRC_DIR="."</Elem>
-          </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/sdk/add_on/scriptbuilder">
         <ccTool>
           <incDir>
-            <pElem>../angelscript/sdk/add_on/scriptbuilder</pElem>
+            <pElem>/opt/localionclude</pElem>
+            <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
-            <pElem>src</pElem>
+            <pElem>src/embedded/teocli/libteol0</pElem>
           </incDir>
         </ccTool>
       </folder>
       <folder path="0/sdk/add_on/scriptdictionary">
         <ccTool>
           <incDir>
-            <pElem>src</pElem>
             <pElem>.</pElem>
             <pElem>/opt/localionclude</pElem>
             <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
-            <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
-            <Elem>PACKAGE_SRC_DIR="."</Elem>
-          </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/sdk/add_on/scriptfile">
         <ccTool>
           <incDir>
-            <pElem>src</pElem>
             <pElem>.</pElem>
             <pElem>/opt/localionclude</pElem>
             <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
-            <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
-            <Elem>PACKAGE_SRC_DIR="."</Elem>
-          </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/sdk/add_on/scriptgrid">
         <ccTool>
           <incDir>
-            <pElem>src</pElem>
             <pElem>.</pElem>
             <pElem>/opt/localionclude</pElem>
             <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
-            <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
-            <Elem>PACKAGE_SRC_DIR="."</Elem>
-          </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/sdk/add_on/scripthandle">
         <ccTool>
           <incDir>
-            <pElem>src</pElem>
             <pElem>.</pElem>
             <pElem>/opt/localionclude</pElem>
             <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
-            <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
-            <Elem>PACKAGE_SRC_DIR="."</Elem>
-          </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/sdk/add_on/scripthelper">
         <ccTool>
           <incDir>
-            <pElem>src</pElem>
             <pElem>.</pElem>
             <pElem>/opt/localionclude</pElem>
             <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
-            <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
-            <Elem>PACKAGE_SRC_DIR="."</Elem>
-          </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/sdk/add_on/scriptmath">
         <ccTool>
           <incDir>
-            <pElem>src</pElem>
             <pElem>.</pElem>
             <pElem>/opt/localionclude</pElem>
             <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
-            <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
-            <Elem>PACKAGE_SRC_DIR="."</Elem>
-          </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/sdk/add_on/serializer">
         <ccTool>
           <incDir>
-            <pElem>src</pElem>
             <pElem>.</pElem>
             <pElem>/opt/localionclude</pElem>
             <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
-            <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
-            <Elem>PACKAGE_SRC_DIR="."</Elem>
-          </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/sdk/add_on/weakref">
         <ccTool>
           <incDir>
-            <pElem>src</pElem>
             <pElem>.</pElem>
             <pElem>/opt/localionclude</pElem>
             <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
-            <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
-            <Elem>PACKAGE_SRC_DIR="."</Elem>
-          </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/sdk/angelscript">
         <ccTool>
           <incDir>
-            <pElem>src</pElem>
             <pElem>.</pElem>
             <pElem>/opt/localionclude</pElem>
             <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
-            <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
-            <Elem>PACKAGE_SRC_DIR="."</Elem>
-          </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/sdk/samples">
         <ccTool>
           <incDir>
-            <pElem>src</pElem>
             <pElem>.</pElem>
             <pElem>/opt/localionclude</pElem>
             <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
           </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
-            <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
-            <Elem>PACKAGE_SRC_DIR="."</Elem>
-          </preprocessorList>
         </ccTool>
       </folder>
-      <folder path="1/src/modules">
+      <folder path="1">
         <ccTool>
           <incDir>
-            <pElem>src/modules</pElem>
+            <pElem>/opt/localionclude</pElem>
+            <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
-            <pElem>../angelscript/sdk/add_on/scriptbuilder</pElem>
-            <pElem>../angelscript/sdk/add_on/scriptstdstring</pElem>
-            <pElem>src</pElem>
+            <pElem>src/embedded/teocli/libteol0</pElem>
           </incDir>
         </ccTool>
       </folder>
-      <item path="src/main.c" ex="false" tool="0" flavor2="2">
-        <cTool flags="1">
-        </cTool>
-      </item>
       <item path="src/main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
-          <incDir>
-            <pElem>../angelscript/sdk/angelscript/include</pElem>
-            <pElem>src/modules</pElem>
-            <pElem>src</pElem>
-          </incDir>
         </ccTool>
       </item>
       <item path="src/modules/as_connect.cpp" ex="false" tool="1" flavor2="8">

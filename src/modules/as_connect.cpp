@@ -2,6 +2,7 @@
 
 #include <assert.h>  // assert()
 #include <string.h>  // strstr()
+#include <stdlib.h>  // malloc(), free()
 
 #if !(defined(_WIN32) || defined(_WIN64))
     #include <sys/time.h>

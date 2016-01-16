@@ -30,3 +30,7 @@
 /src/.libs/
 /src/teonet_tmpl
 /src/teocli_as
+/autoscan.log
+/src/stamp-h1
+/src/config.h
+/src/config.h.in
