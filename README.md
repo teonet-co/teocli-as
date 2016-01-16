@@ -7,9 +7,9 @@
 
 ## Clone git repository  to get code
 
-git clone git@gitlab.ksproject.org:teonet/TeocliAS.git
-cd TeocliAS
-git submodule update --init
+    git clone git@gitlab.ksproject.org:teonet/TeocliAS.git
+    cd TeocliAS
+    git submodule update --init
 
 
 ## 2.1 Install Teonet library from repositories
@@ -82,6 +82,11 @@ Run make:
 ## 3. Generate your application sources (first time when got sources from repository)
 
     ./autogen.sh
+
+## 3.1. Using autoscan to Create configure.ac
+
+Use [autoscan](https://www.gnu.org/savannah-checkouts/gnu/autoconf/manual/autoconf-2.69/html_node/autoscan-Invocation.html)
+to update (or create new one) projects configure.ac
 
 ## 4. Make your application 
 
