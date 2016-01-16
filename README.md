@@ -1,23 +1,12 @@
-# Teonet application template
+# TeocliAS application
 
-## 1. Fork project
+## 1. Description
 
-Fork and rename this project to create your own Teonet Application.
 
-## 2. Change application name
+## 2. Installation
 
-Rename the ```teomet-tmpl``` to ```your-application-name``` 
-and ```teomet_tmpl``` to ```your_application_name``` in files:
 
-    configure.ac
-    MakeFile.am
-    src/MakeFile.am
-
-## 3. Generate your application sources (first time when got sources from repository)
-
-    ./autogen.sh
-
-## 4. Install Teonet library from repositories
+## 2.1 Install Teonet library from repositories
 
 DEB / RPM repository: http://repo.ksproject.org
 
@@ -27,14 +16,14 @@ http://repo.ksproject.org/ubuntu/
 
 #### Add repository
 
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8CC88F3BE7D6113C
-sudo apt-get install -y software-properties-common
-sudo add-apt-repository "deb http://repo.ksproject.org/ubuntu/ teonet main"
-sudo apt-get update
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8CC88F3BE7D6113C
+    sudo apt-get install -y software-properties-common
+    sudo add-apt-repository "deb http://repo.ksproject.org/ubuntu/ teonet main"
+    sudo apt-get update
 
 #### Install
 
-sudo apt-get install -y libteonet-dev
+    sudo apt-get install -y libteonet-dev
 
 
 ### CENTOS / RHEL / FEDORA
@@ -71,13 +60,51 @@ http://repo.ksproject.org/rhel/x86_64/
     zypper in -y libteonet
     ldconfig
 
+## 2.2 AngelScript Sources Installation
 
-## 5. Make your application 
+Download AngelScript sources from official web site: http://www.angelcode.com/angelscript/downloads.html  
+or  
+Get the AngelScript sources from this project dist folder.  
+  
+Unzip source folder archive to $PROJECT_HOME/../angelscript folder  
+  
+Run make:  
+
+    cd $PROJECT_HOME/../angelscript/sdk/angelscript/projects/gnuc
+    make
+
+## 3. Generate your application sources (first time when got sources from repository)
+
+    ./autogen.sh
+
+## 4. Make your application 
 
     make
 
-## 6. Run 
+## 5. Run 
     
-    src/teonet_tmpl 
-  
-    src/teonet_tmpl teo-tmpl
+    cd src
+    ./teocli_as 
+
+The applications output looks like this:   
+```
+Teocli AngelScript ver 0.0.1
+
+===========
+Executing function 'void main()' of the script.
+---
+Hello world!
+main: System has been running for 1.20452e+06.113 seconds
+---
+The script finished successfully.
+
+===========
+Executing function 'float calc(float, float)' of the script.
+---
+Received: 3.14159, 2.71828
+calc: System has been running for 1.20452e+06.113 seconds
+---
+The script function returned: 8.53973
+
+Press any key to quit.
+```
