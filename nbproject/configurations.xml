@@ -156,6 +156,13 @@
       <itemPath>../angelscript/sdk/angelscript/include/angelscript.h</itemPath>
     </logicalFolder>
     <df root="." name="1">
+      <df name="embedded">
+        <df name="teocli">
+          <df name="libteol0">
+            <in>teonet_l0_client.c</in>
+          </df>
+        </df>
+      </df>
       <df name="src">
         <df name="modules">
           <in>as_connect.cpp</in>
@@ -187,6 +194,7 @@
       </toolsSet>
       <flagsDictionary>
         <element flagsID="0" commonFlags="-O2"/>
+        <element flagsID="1" commonFlags="-g -g -O2"/>
       </flagsDictionary>
       <codeAssistance>
       </codeAssistance>
@@ -196,6 +204,20 @@
           <buildCommand>${MAKE} -f Makefile</buildCommand>
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
           <executablePath></executablePath>
+          <cTool>
+            <incDir>
+              <pElem>src</pElem>
+              <pElem>../teonet/src</pElem>
+              <pElem>../teonet/embedded/libpbl/src</pElem>
+              <pElem>src/embedded/teocli/libteol0</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>HAVE_CONFIG_H</Elem>
+              <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
+              <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
+              <Elem>PACKAGE_SRC_DIR="."</Elem>
+            </preprocessorList>
+          </cTool>
           <ccTool>
             <incDir>
               <pElem>src</pElem>
@@ -570,6 +592,13 @@
             ex="false"
             tool="1"
             flavor2="4">
+      </item>
+      <item path="embedded/teocli/libteol0/teonet_l0_client.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+        <cTool flags="1">
+        </cTool>
       </item>
       <folder path="0/sdk/add_on/autowrapper">
         <ccTool>

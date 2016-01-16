@@ -39,10 +39,10 @@ teocli_as_SOURCES = \
 	main.cpp \
 	modules/as_connect.cpp \
 	\
+	../embedded/teocli/libteol0/teonet_l0_client.c \
+	\
 	../../angelscript/sdk/add_on/scriptstdstring/scriptstdstring.cpp \
 	../../angelscript/sdk/add_on/scriptbuilder/scriptbuilder.cpp
-
-#	embedded/teocli/libteol0/teonet_l0_client.c 
 
 
 teocli_as_LDFLAGS = $(AM_LDFLAGS)
