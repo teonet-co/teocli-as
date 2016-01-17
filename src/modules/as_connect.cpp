@@ -58,8 +58,8 @@ int getch() {
 #endif
 
 // Function prototypes
-void ConfigureEngine(asIScriptEngine *engine);
-int  CompileScript(asIScriptEngine *engine, const char *script);
+static void ConfigureEngine(asIScriptEngine *engine, registerGlobalFuntions rgf);
+static int  CompileScript(asIScriptEngine *engine, const char *script);
 void PrintString(string &str);
 void PrintString_Generic(asIScriptGeneric *gen);
 void timeGetTime_Generic(asIScriptGeneric *gen);
@@ -72,7 +72,7 @@ int ExecuteMain(asData *data, const char *decl);
  * 
  * @return 
  */
-asData *asEngineInit(const char *script) {
+asData *asEngineInit(const char *script, registerGlobalFuntions rgf) {
     
     int r;    
     asData *data = (asData *)malloc(sizeof(asData));
@@ -91,7 +91,7 @@ asData *asEngineInit(const char *script) {
 
     // Configure the script engine with all the functions, 
     // and variables that the script should be able to use.
-    ConfigureEngine(data->engine);
+    ConfigureEngine(data->engine, rgf);
 
     // Compile the script code
     r = CompileScript(data->engine, script);
@@ -214,7 +214,7 @@ void MessageCallback(const asSMessageInfo *msg, void *param) {
  * 
  * @param engine
  */
-void ConfigureEngine(asIScriptEngine *engine) {
+static void ConfigureEngine(asIScriptEngine *engine, registerGlobalFuntions rgf) {
 
     int r;
 
@@ -234,7 +234,7 @@ void ConfigureEngine(asIScriptEngine *engine) {
             r = engine->RegisterGlobalFunction("void Print(string &in)", 
                     asFUNCTION(PrintString), asCALL_CDECL); assert( r >= 0 );
             r = engine->RegisterGlobalFunction("uint GetSystemTime()", 
-                    asFUNCTION(timeGetTime), asCALL_STDCALL); assert( r >= 0 );
+                    asFUNCTION(timeGetTime), asCALL_STDCALL); assert( r >= 0 );             
     }
     else
     {
@@ -246,6 +246,8 @@ void ConfigureEngine(asIScriptEngine *engine) {
                     asFUNCTION(timeGetTime_Generic), asCALL_GENERIC); 
                     assert( r >= 0 );
     }
+    // Register custom global functions
+    if(rgf != NULL) rgf(engine);
 
 
     // It is possible to register the functions, properties, and types in 
@@ -310,7 +312,7 @@ int ExecuteMain(asData *data, const char* decl) {
  * @param engine
  * @return 
  */
-int CompileScript(asIScriptEngine *engine, const char* script) {
+static int CompileScript(asIScriptEngine *engine, const char* script) {
 
     int r;
 

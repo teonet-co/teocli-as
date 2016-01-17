@@ -3,6 +3,10 @@
  * \author Kirill Scherba <kirill@scherba.ru>
  * 
  * Teocli AngelScript sample application
+ * 
+ * Run Teonet server to execute this sample:
+ * 
+ *     teoweb teo-web -p 9010 --l0_allow --l0_tcp_port=9000
  *
  * Created on January 11, 2016, 5:37 PM
  * 
@@ -23,6 +27,8 @@
  */
 
 #include <iostream>  // cout
+
+#include "modules/as_teocli.h"
 #include "modules/as_connect.h"
 
 using namespace std;
@@ -30,6 +36,7 @@ using namespace std;
 #define TAS_VERSION "0.0.1"
 
 int RunScriptFunction(asData *data);
+void RegisterGlobalFuntions(asIScriptEngine *engine);
 
 /**
  * Main application function
@@ -43,7 +50,7 @@ int main(int argc, char** argv) {
     cout << "Teocli AngelScript ver " << TAS_VERSION << endl;
     
     // Initialize AngelScript Engine and execute main function of the script
-    asData *data = asEngineInit("main.as");
+    asData *data = asEngineInit("main.as", RegisterGlobalFuntions);
         
     if(data != NULL) {
         
@@ -116,4 +123,22 @@ int RunScriptFunction(asData *data) {
     }
 
     return 0;
+}
+
+/**
+ * Register global functions for executing in AngelScripts
+ * 
+ * Register the functions that the scripts will be allowed to use.
+ * Note how the return code is validated with an assert(). This helps
+ * us discover where a problem occurs, and doesn't pollute the code
+ * with a lot of if's. If an error occurs in release mode it will
+ * be caught when a script is being built, so it is not necessary
+ * to do the verification here as well.    
+ * 
+ * @param engine
+ */
+
+void RegisterGlobalFuntions(asIScriptEngine *engine) {
+    
+    RegisterTeocliFuntions(engine);
 }

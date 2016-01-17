@@ -1,4 +1,5 @@
 #include "script.as"
+#include "teocli_test.as"
 
 void main(void) 
 {    
@@ -10,5 +11,6 @@ void main(void)
     Print("main: System has been running for " + GetSystemTime()/1000.0 + "." + 
         GetSystemTime()%1000.0 + " seconds\n");
 
-    //for(;;);
+    // Run Teonet client test
+    teocli_test();
 }

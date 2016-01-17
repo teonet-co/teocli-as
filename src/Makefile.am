@@ -22,12 +22,14 @@ AM_LDFLAGS = \
 
 AM_CXX = clang++
 AM_CXXFLAGS = \
-         -g -Wall -pedantic \
+         -g -Wall \
 	 -I/opt/localionclude \
 	 -I$(HOME)/Projects/teonet/src/ \
 	 -I../../angelscript/sdk/angelscript/include \
-	 -Iembedded/teocli/libteol0
+	 -I../embedded/teocli/libteol0 \
 	 -std=c++11
+	
+# -pedantic
 
 LIBS =	-langelscript -pthread
 # -lteonet -lcrypto
@@ -38,6 +40,7 @@ bin_PROGRAMS = teocli_as
 teocli_as_SOURCES = \
 	main.cpp \
 	modules/as_connect.cpp \
+	modules/as_teocli.cpp \
 	\
 	../embedded/teocli/libteol0/teonet_l0_client.c \
 	\

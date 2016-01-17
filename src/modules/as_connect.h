@@ -19,6 +19,8 @@ int getch();
 
 #endif
 
+typedef void (*registerGlobalFuntions)(asIScriptEngine *engine) ;
+
 /**
  * AngelScript module data
  */
@@ -30,7 +32,7 @@ typedef struct asData {
     
 } asData;
 
-asData *asEngineInit(const char *script);
+asData *asEngineInit(const char *script, registerGlobalFuntions rgf = NULL);
 void asEngineDestroy(asData *data);
 
 int asCheckFuncError(asData *data, asIScriptFunction *func, int r);

@@ -27,6 +27,7 @@
             <word>angelscript</word>
             <word>cd</word>
             <word>sdk</word>
+            <word>Teocli</word>
         </spellchecker-wordlist>
     </configuration>
 </project>
