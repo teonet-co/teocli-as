@@ -200,6 +200,7 @@
                  commonFlags="-mtune=generic -march=x86-64 -O2 -std=c++11 -fstack-protector"/>
         <element flagsID="2"
                  commonFlags="-mtune=generic -march=x86-64 -g -g -O2 -fstack-protector"/>
+        <element flagsID="3" commonFlags="-std=c++11 -O2"/>
       </flagsDictionary>
       <codeAssistance>
       </codeAssistance>
@@ -865,16 +866,11 @@
           </incDir>
         </ccTool>
       </folder>
-      <folder path="1/src/modules">
-        <ccTool>
-          <incDir>
-            <pElem>src/modules</pElem>
-          </incDir>
-        </ccTool>
-      </folder>
       <item path="src/main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="1">
           <incDir>
+            <pElem>/opt/localionclude</pElem>
+            <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
             <pElem>src/modules</pElem>
             <pElem>src</pElem>
@@ -884,20 +880,31 @@
       <item path="src/modules/as_connect.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
           <incDir>
-            <pElem>../angelscript/sdk/add_on/scriptbuilder</pElem>
+            <pElem>/opt/localionclude</pElem>
+            <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
+            <pElem>src/modules</pElem>
+            <pElem>../angelscript/sdk/add_on/scriptbuilder</pElem>
             <pElem>../angelscript/sdk/add_on/scriptstdstring</pElem>
             <pElem>src</pElem>
           </incDir>
         </ccTool>
       </item>
       <item path="src/modules/as_teocli.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="1">
+        <ccTool flags="3">
           <incDir>
+            <pElem>src</pElem>
+            <pElem>/opt/localionclude</pElem>
+            <pElem>../teonet/src</pElem>
             <pElem>../angelscript/sdk/angelscript/include</pElem>
             <pElem>embedded/teocli/libteol0</pElem>
-            <pElem>src</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>HAVE_CONFIG_H</Elem>
+            <Elem>PACKAGE_DATA_DIR="/usr/local/share"</Elem>
+            <Elem>PACKAGE_LOCALE_DIR="/usr/local/share/locale"</Elem>
+            <Elem>PACKAGE_SRC_DIR="."</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
     </conf>

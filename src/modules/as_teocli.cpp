@@ -62,13 +62,18 @@ void RegisterTeocliFuntions(asIScriptEngine *engine) {
     
     int r;
     
-    // L0 client connect data type
+    // L0 client connect data types
     r = engine->RegisterObjectType(
         "teoLNullConnectData", sizeof(teoLNullConnectData), 
         asOBJ_VALUE | asOBJ_POD
     ); assert( r >= 0 );
+    //
+    r = engine->RegisterObjectType(
+        "teoLNullCPacket", sizeof(teoLNullCPacket), 
+        asOBJ_VALUE | asOBJ_POD
+    ); assert( r >= 0 );
     
-    // L0 client connect data property              
+    // L0 client connect teoLNullConnectData data property              
     r = engine->RegisterObjectProperty(
         "teoLNullConnectData", "int fd", 
         asOFFSET(teoLNullConnectData,fd)

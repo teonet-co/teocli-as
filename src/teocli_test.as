@@ -42,8 +42,24 @@ void teocli_test() {
         Print("Send " + snd + " bytes packet to L0 server to peer " + peer_name + ", " +
               "cmd = " + CMD_L_PEERS + " (CMD_L_PEERS)\n");
 
+        // Receive (1) answer from server, CMD_L_PEERS_ANSWER      
+//        while((rc = teoLNullRecv(con)) == -1) teoLNullSleep(50);  
+
+        // Process received data
+//        if(rc > 0) {
+            
+//            teoLNullCPacket *cp = (teoLNullCPacket*) con->read_buffer;            
+//            printf("Receive %d bytes: %d bytes data from L0 server, "
+//                    "from peer %s, cmd = %d\n", 
+//                    (int)rc, cp->data_length, cp->peer_name, cp->cmd);
+            
+            // Process CMD_L_PEERS_ANSWER
+//            if(cp->cmd == CMD_L_PEERS_ANSWER && cp->data_length > 1) {
+//            }
+//        }
+
         // Close connection
-        teoLNullDisconnect(con);
+//        teoLNullDisconnect(con);
     }
 
     // Cleanup L0 Client library
