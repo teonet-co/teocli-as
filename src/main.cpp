@@ -109,7 +109,7 @@ int RunScriptFunction(asData *data) {
 
     // 5) Execute the function
     cout << endl << "===========" << endl 
-            << "Executing function '" << decl << "' of the script." << endl;
+            << "Executing script function '" << decl << "':" << endl;
     cout << "---" << endl;
     r = data->ctx->Execute();
     cout << "---" << endl;

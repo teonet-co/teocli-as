@@ -293,14 +293,15 @@ int ExecuteMain(asData *data, const char* decl) {
     data->timeOut = timeGetTime() + 1000;
 
     // Execute the function
-    cout << endl << "===========" << endl 
-            << "Executing function '" << decl << "' of the script." << endl;
+    const char *line = "===========";
+    cout << "AngelScript initialize..." << endl << line << endl 
+            << "Executing script function '" << decl << "':" << endl;
     cout << "---" << endl;
     r = data->ctx->Execute();
     cout << "---" << endl;
     if(!asCheckFuncError(data, func, r)) {
     
-        cout << "The script finished successfully." << endl;
+        cout << line << endl << "The script finished successfully" << endl;
     }
     
     return 0;
