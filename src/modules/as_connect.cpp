@@ -129,7 +129,7 @@ asData *asEngineInit(const char *script, registerGlobalFuntions rgf) {
     }
     
     // Execute main function
-    ExecuteMain(data, "void main()");
+    //ExecuteMain(data, "void main()");
 
     return data;
 }

@@ -36,5 +36,5 @@ asData *asEngineInit(const char *script, registerGlobalFuntions rgf = NULL);
 void asEngineDestroy(asData *data);
 
 int asCheckFuncError(asData *data, asIScriptFunction *func, int r);
-
+int ExecuteMain(asData *data, const char* decl);
 #endif	/* ANGELSCRIPT_H */
