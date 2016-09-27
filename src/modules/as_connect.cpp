@@ -60,6 +60,8 @@ int getch() {
 // Function prototypes
 static void ConfigureEngine(asIScriptEngine *engine, registerGlobalFuntions rgf);
 static int  CompileScript(asIScriptEngine *engine, const char *script);
+
+
 void PrintString(string &str);
 void PrintString_Generic(asIScriptGeneric *gen);
 void timeGetTime_Generic(asIScriptGeneric *gen);
@@ -307,6 +309,51 @@ int ExecuteMain(asData *data, const char* decl) {
     return 0;
 }
 
+
+int regScript(asIScriptEngine *engine, const char* script) {
+
+    int r;
+
+    // The builder is a helper class that will load the script file, 
+    // search for #include directives, and load any included files as 
+    // well.
+    CScriptBuilder builder;
+
+    // Build the script. If there are any compiler messages they will
+    // be written to the message stream that we set right after creating the 
+    // script engine. If there are no errors, and no warnings, nothing will
+    // be written to the stream.
+    r = builder.StartNewModule(engine, 0);
+    if( r < 0 )
+    {
+            cout << "Failed to start new module" << endl;
+            return r;
+    }
+    r = builder.AddSectionFromMemory("GOVNO", script);
+    if( r < 0 )
+    {
+            cout << "Failed to add script file" << endl;
+            return r;
+    }
+    r = builder.BuildModule();
+    if( r < 0 )
+    {
+            cout << "Failed to build the module" << endl;
+            return r;
+    }
+
+    // The engine doesn't keep a copy of the script sections after Build() has
+    // returned. So if the script needs to be recompiled, then all the script
+    // sections must be added again.
+
+    // If we want to have several scripts executing at different times but 
+    // that have no direct relation with each other, then we can compile them
+    // into separate script modules. Each module use their own namespace and 
+    // scope, so function names, and global variables will not conflict with
+    // each other.       
+
+    return 0;
+}
 /**
  * CompileScript
  * 

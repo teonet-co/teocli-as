@@ -35,6 +35,8 @@ typedef struct asData {
 asData *asEngineInit(const char *script, registerGlobalFuntions rgf = NULL);
 void asEngineDestroy(asData *data);
 
+int regScript(asIScriptEngine *engine, const char* script);
+
 int asCheckFuncError(asData *data, asIScriptFunction *func, int r);
 int ExecuteMain(asData *data, const char* decl);
 #endif	/* ANGELSCRIPT_H */
