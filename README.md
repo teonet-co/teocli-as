@@ -71,12 +71,13 @@ Download AngelScript sources from official web site: http://www.angelcode.com/an
 or  
 Get the AngelScript sources from this project dist folder.  
   
-Unzip source folder archive to $PROJECT_HOME/../angelscript folder  
+Unzip source folder archive to anywhere you want.  
   
 Run make:  
 
-    cd $PROJECT_HOME/../angelscript/sdk/angelscript/projects/gnuc
+    cd angelscript/sdk/angelscript/projects/gnuc
     make
+    make install
 
 ## 3. Generate your application sources (first time when got sources from repository)
 
