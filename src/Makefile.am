@@ -9,24 +9,25 @@ AM_CPPFLAGS = \
 	-DPACKAGE_DATA_DIR=\""$(datadir)"\" $(TEONET_KSF_CFLAGS)
 
 AM_CFLAGS = \
-	 -Wall \
-	 -g \
-	 -I$(HOME)/Projects/teonet/src/ \
-	 -I$(HOME)/Projects/teonet/embedded/libpbl/src \
-	 -Iembedded/teocli/libteol0
+	-Wall \
+	-g \
+	-I/usr/include/teonet \
+	-Iteocli/libteol0
 
 AM_LDFLAGS = \
- 	 -L$(HOME)/Projects/teonet/src/ \
- 	 -L../../angelscript/sdk/angelscript/lib \
-	 -L$(HOME)/Projects/angelscript/sdk/angelscript/lib
+	-I/usr/include/teonet
+	-L/usr/local/lib
+
+#	-LAngelSdk/angelscript/sdk/angelscript/lib
 
 AM_CXX = clang++
 AM_CXXFLAGS = \
-         -g -Wall \
-	 -I/opt/localionclude \
+	 -g -Wall \
+	-I/opt/localionclude \
+	-I/usr/include/teonet \
 	 -I$(HOME)/Projects/teonet/src/ \
-	 -I../../angelscript/sdk/angelscript/include \
-	 -I../embedded/teocli/libteol0 \
+	 -I../AngelSdk/angelscript/sdk/angelscript/include \
+	 -I../teocli/libteol0 \
 	 -std=c++11
 	
 # -pedantic
@@ -42,10 +43,10 @@ teocli_as_SOURCES = \
 	modules/as_connect.cpp \
 	modules/as_teocli.cpp \
 	\
-	../embedded/teocli/libteol0/teonet_l0_client.c \
+	../teocli/libteol0/teonet_l0_client.c \
 	\
-	../../angelscript/sdk/add_on/scriptstdstring/scriptstdstring.cpp \
-	../../angelscript/sdk/add_on/scriptbuilder/scriptbuilder.cpp
+	modules/as/scriptstdstring.cpp \
+	modules/as/scriptbuilder.cpp
 
 
 teocli_as_LDFLAGS = $(AM_LDFLAGS)

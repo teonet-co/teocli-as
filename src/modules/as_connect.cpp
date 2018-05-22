@@ -17,8 +17,8 @@
 #include "as_connect.h"
 
 // Add Ons
-#include "../../../angelscript/sdk/add_on/scriptstdstring/scriptstdstring.h"
-#include "../../../angelscript/sdk/add_on/scriptbuilder/scriptbuilder.h"
+#include "as/scriptstdstring.h"
+#include "as/scriptbuilder.h"
 
 using namespace std;
 

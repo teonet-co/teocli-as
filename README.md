@@ -6,8 +6,7 @@
 ## 2. Installation
 
 ## Clone git repository  to get code
-
-    git clone git@gitlab.ksproject.org:teonet/TeocliAS.git
+    git clone git@github.com:teonet-co/TeocliAS.git
     cd TeocliAS
     git submodule update --init
 
