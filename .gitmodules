@@ -1,3 +1,6 @@
 [submodule "teocli"]
 	path = teocli
 	url = git@github.com:teonet-co/teocli.git
+[submodule "libs/AngelScript"]
+	path = libs/AngelScript
+	url = https://github.com/teonet-co/AngelScript.git
