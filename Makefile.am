@@ -1,7 +1,7 @@
 ## Process this file with automake to produce Makefile.in
 ## Created by Anjuta
 
-SUBDIRS = src po
+SUBDIRS = libs/AngelScript/angelscript/projects/gnuc src po
 
 yodge_pingdocdir = ${prefix}/doc/teocli-as
 yodge_pingdoc_DATA = \

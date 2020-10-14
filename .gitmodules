@@ -1,5 +1,5 @@
 [submodule "teocli"]
-	path = teocli
+	path = libs/teocli
 	url = git@github.com:teonet-co/teocli.git
 [submodule "libs/AngelScript"]
 	path = libs/AngelScript
